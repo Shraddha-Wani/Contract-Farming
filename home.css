@@ -1,0 +1,219 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+.nav ul li .login:hover {
+    color: #c9f0d4;
+}
+
+.nav ul li .login {
+    background-color: #fff;
+    color: #4CAF50;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.hero {
+    background-image: url('images/farm.jpg'); /* Ensure 'cover.jpg' is in the same directory or adjust path */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    text-align: center;
+    color: #333; /* Changed to black for contrast */
+    height: 400px;
+}
+.featured-services{
+    background-image: url('images/background.jpg'); /* Ensure 'cover.jpg' is in the same directory or adjust path */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    text-align: center;
+    color: #333; /* Changed to black for contrast */
+    height: 400px;
+
+}
+.latest-updates{
+    background-image: url('images/farm2.jpg'); /* Ensure 'cover.jpg' is in the same directory or adjust path */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    text-align: center;
+    color: #333; /* Changed to black for contrast */
+    height: 400px;
+}
+.testimonials{
+    background-image: url('images/farm4.jpg'); /* Ensure 'cover.jpg' is in the same directory or adjust path */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    text-align: center;
+    color: #333; /* Changed to black for contrast */
+    height: 400px;
+}
+.quick-links{
+    background-image: url('images/farm3.jpg'); /* Ensure 'cover.jpg' is in the same directory or adjust path */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    text-align: center;
+    color: #333; /* Changed to black for contrast */
+    height: 400px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cta {
+    background-color: #fff;
+    color: #4CAF50;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: #c9f0d4;
+}
+
+.featured-services, .latest-updates, .testimonials, .quick-links {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-services h2,
+.latest-updates h2,
+.testimonials h2,
+.quick-links h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #4CAF50;
+}
+
+.service-card, .update, .testimonial, .links a {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 1rem 0;
+    background-color: #f9f9f9;
+}
+
+.service-card h3, .testimonial p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.service-card h3 {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.service-card:hover, .links a:hover {
+    background-color: #e8f5e9;
+    color: #4CAF50;
+}
+
+.links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer .social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+footer .social-media a:hover {
+    color: #c9f0d4;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1, .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e9f5e9, #c8e6c9); /* Light green gradient */
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #4CAF50; /* Green color for the title */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #45a049; /* Darker green on hover */
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none; /* Hidden by default */
+    background: #f9f9f9;
+    border-top: 1px solid #ddd; /* Separate the answer from the question */
+}
+
+.faq-answer.active {
+    display: block; /* Display the answer when active */
+}

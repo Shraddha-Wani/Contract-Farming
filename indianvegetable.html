@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .crop-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .crop-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            width: 250px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .crop-card:hover {
+            transform: scale(1.05);
+        }
+
+        .crop-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .crop-info {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="crop-gallery">
+        <div class="crop-card" onclick="showCropInfo('crop1')">
+            <img src="images/tomato.jpg" alt="Tomato">
+            <h3>Tomato</h3>
+            <p>A popular vegetable in salads and sauces.</p>
+        </div>
+        <div class="crop-card" onclick="showCropInfo('crop2')">
+            <img src="images/potato.jpg" alt="Potato">
+            <h3>Potato</h3>
+            <p>Staple vegetable known for its versatility.</p>
+        </div>
+        <div class="crop-card" onclick="showCropInfo('crop3')">
+            <img src="images/carrot.jpg" alt="Carrot">
+            <h3>Carrot</h3>
+            <p>Rich in vitamin A, commonly used in salads.</p>
+        </div>
+    </div>
+
+    <div id="crop-info" class="crop-info">
+        <h2 id="crop-name"></h2>
+        <p id="crop-description"></p>
+        <h3>Growing Conditions:</h3>
+        <p id="crop-growing-conditions"></p>
+        <h3>Cultivation Practices:</h3>
+        <p id="crop-cultivation-practices"></p>
+        <h3>Harvesting Information:</h3>
+        <p id="crop-harvesting-info"></p>
+        <h3>Market Price Trends:</h3>
+        <p id="crop-price-trends"></p>
+        <h3>Pest and Disease Management:</h3>
+        <p id="crop-pest-management"></p>
+        <h3>Contract Farming Details:</h3>
+        <p id="crop-contract-details"></p>
+        <h3>Success Stories:</h3>
+        <p id="crop-success-stories"></p>
+        <button onclick="hideCropInfo()">Close</button>
+    </div>
+
+    <script>
+        const cropData = {
+            crop1: {
+                name: "Tomato",
+                description: "Tomatoes are rich in vitamins and widely used in cooking.",
+                growingConditions: "Requires warm weather and well-drained soil.",
+                cultivationPractices: "Plant in early spring; support plants as they grow.",
+                harvestingInfo: "Harvested 60-80 days after planting when fully red.",
+                priceTrends: "Current market price is around $800 per ton.",
+                pestManagement: "Watch for tomato hornworms; use organic sprays.",
+                contractDetails: "Contracts often specify quality for processing and fresh markets.",
+                successStories: "Farmers using greenhouse techniques report higher yields and profits."
+            },
+            crop2: {
+                name: "Potato",
+                description: "Potatoes are versatile, high-yield crops essential in global cuisine.",
+                growingConditions: "Thrives in cool, well-drained soil.",
+                cultivationPractices: "Plant in spring; requires regular hilling and watering.",
+                harvestingInfo: "Ready to harvest 70-120 days after planting.",
+                priceTrends: "Current market price is around $300 per ton.",
+                pestManagement: "Common pests include potato beetles; controlled through crop rotation.",
+                contractDetails: "Contracts often include specific size and quality requirements.",
+                successStories: "Farmers report increased revenue with precision farming technology."
+            },
+            crop3: {
+                name: "Carrot",
+                description: "Carrots are root vegetables rich in beta-carotene and dietary fiber.",
+                growingConditions: "Grows best in loose, sandy soil with cool temperatures.",
+                cultivationPractices: "Plant in spring and fall; thin seedlings for best growth.",
+                harvestingInfo: "Harvested 60-80 days after planting when roots reach 1 inch in diameter.",
+                priceTrends: "Current market price is around $600 per ton.",
+                pestManagement: "Aphids and root flies are common; use natural predators for control.",
+                contractDetails: "Contracts often specify organic and conventional produce standards.",
+                successStories: "Farmers have seen success using organic fertilizers for enhanced yield."
+            }
+        };
+
+        function showCropInfo(crop) {
+            const cropInfo = cropData[crop];
+            document.getElementById("crop-name").innerText = cropInfo.name;
+            document.getElementById("crop-description").innerText = cropInfo.description;
+            document.getElementById("crop-growing-conditions").innerText = cropInfo.growingConditions;
+            document.getElementById("crop-cultivation-practices").innerText = cropInfo.cultivationPractices;
+            document.getElementById("crop-harvesting-info").innerText = cropInfo.harvestingInfo;
+            document.getElementById("crop-price-trends").innerText = cropInfo.priceTrends;
+            document.getElementById("crop-pest-management").innerText = cropInfo.pestManagement;
+            document.getElementById("crop-contract-details").innerText = cropInfo.contractDetails;
+            document.getElementById("crop-success-stories").innerText = cropInfo.successStories;
+
+            // Show crop information
+            document.getElementById("crop-info").style.display = 'block';
+        }
+
+        function hideCropInfo() {
+            // Hide crop information
+            document.getElementById("crop-info").style.display = 'none';
+        }
+    </script>
+</body>
+</html>

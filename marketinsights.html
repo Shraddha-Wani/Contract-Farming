@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market insights</title>
+    <link rel="stylesheet" href="css/marketinsight.css">
+    <script>
+        // Sample data to simulate market insights
+        const marketData = {
+            trends: [
+                "Increasing demand for organic produce.",
+                "Rising prices for wheat due to supply constraints.",
+                "Expansion of e-commerce in agricultural markets."
+            ],
+            prices: {
+                wheat: "₹2,500 per quintal",
+                rice: "₹3,200 per quintal",
+                maize: "₹1,800 per quintal",
+                cotton: "₹6,000 per quintal"
+            },
+            news: [
+                "Government announces subsidies for organic farmers.",
+                "New technology launched for efficient irrigation.",
+                "Farmers protest against new agricultural laws."
+            ]
+        };
+
+        // Function to display market insights on page load
+        function displayMarketInsights() {
+            document.getElementById("trends").innerHTML = marketData.trends.map(trend => `<li>${trend}</li>`).join('');
+            document.getElementById("prices").innerHTML = Object.entries(marketData.prices).map(([commodity, price]) => `<li>${commodity.charAt(0).toUpperCase() + commodity.slice(1)}: ${price}</li>`).join('');
+            document.getElementById("news").innerHTML = marketData.news.map(newsItem => `<li>${newsItem}</li>`).join('');
+        }
+
+        window.onload = displayMarketInsights;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Market Insight</h1>
+        <nav>
+            <ul>
+                <li><a href="contractfarminghome.html">Return To Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>Current Indian Market Insights</h2>
+
+        <div class="insight-section">
+            <h3>Market Trends</h3>
+            <ul id="trends">
+                <!-- Trends will be populated here -->
+            </ul>
+        </div>
+
+        <div class="insight-section">
+            <h3>Commodity Prices</h3>
+            <ul id="prices">
+                <!-- Prices will be populated here -->
+            </ul>
+        </div>
+
+        <div class="insight-section">
+            <h3>Latest News</h3>
+            <ul id="news">
+                <!-- News will be populated here -->
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HarvestHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

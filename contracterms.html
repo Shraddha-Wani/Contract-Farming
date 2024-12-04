@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contract Trems</title>
+    <link rel="stylesheet" href="css/contractterm.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contract Terms</h1>
+        <form id="contractTermForm">
+            <div class="form-group">
+                <label for="cropname">Crop Name:</label>
+                <input type="text" id="cropname" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Quantity/Weight:</label>
+                <input type="number" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="stdname">Quality Standard:</label>
+                <input type="text" id="stdname" required>
+            </div>
+            <div class="form-group">
+                <label for="ftname">Input Support (seeds, fertilizers):</label>
+                <input type="text" id="ftname" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price (₹ per unit):</label>
+                <input type="number" id="price" required>
+            </div>
+            <div class="form-group">
+                <label for="payment">Payment Terms (e.g., on Delivery, after Delivery):</label>
+                <input type="text" id="payment" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Delivery Location:</label>
+                <input type="text" id="location" required>
+            </div>
+            <div class="form-group">
+                <label for="ddate">Delivery Deadline:</label>
+                <input type="date" id="ddate" required>
+            </div>
+            <button type="submit" class="btn"><a href="contractsucess.html">Generate Contract</a></button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">What is contract farming?</div>
+            <div class="faq-answer">
+                <p>Contract farming is an agreement between farmers and buyers to produce a specific crop under agreed-upon terms, ensuring both parties' needs are met.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I join the platform?</div>
+            <div class="faq-answer">
+                <p>You can join by clicking the "Join Now" button on the homepage and filling out the registration form.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What types of crops can I contract?</div>
+            <div class="faq-answer">
+                <p>Our platform supports a variety of crops. You can specify your preferred crops during the contract creation process.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is there a fee for using the service?</div>
+            <div class="faq-answer">
+                <p>No, joining and using our platform is completely free for farmers and buyers.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How can I contact support?</div>
+            <div class="faq-answer">
+                <p>You can reach out to our support team via the contact form on our website or through the contact information provided in the footer.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Farming Agreement Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgb(60, 225, 60);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            flex: 1 0 200px;
+            padding-right: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            flex: 2 0 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        #contract-preview {
+            display: none;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #contract-preview pre {
+            background: #f8f8f8;
+            color: #333;
+            padding: 20px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        @media (max-width: 600px) {
+            .form-group {
+                flex-direction: column;
+            }
+            .form-group label, 
+            .form-group input, 
+            .form-group textarea, 
+            .form-group select {
+                flex: 1 0 100%;
+            }
+        }
+    </style>
+   
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Contract Farming Agreement Generator</h1>
+        <form id="contract-form" action="save_contract.php"   method="POST" enctype="multipart/form-data">
+            <h2>Parties Information</h2>
+            <div class="form-group">
+                <label for="farmerName">Farmer's Name:</label>
+                <input type="text" id="farmerName" name="farmerName" required>
+            </div>
+            <div class="form-group">
+                <label for="farmerAddress">Farmer's Address:</label>
+                <textarea id="farmerAddress" name="farmerAddress" rows="2" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="farmerContact">Farmer's Contact Information:</label>
+                <input type="text" id="farmerContact" name="farmerContact" required>
+            </div>
+            <div class="form-group">
+                <label for="buyerName">Buyer's Name/Company Name:</label>
+                <input type="text" id="buyerName" name="buyerName" required>
+            </div>
+            <div class="form-group">
+                <label for="buyerAddress">Buyer's Address:</label>
+                <textarea id="buyerAddress" name="buyerAddress" rows="2" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="buyerContact">Buyer's Contact Information:</label>
+                <input type="text" id="buyerContact" name="buyerContact" required>
+            </div>
+            <div class="form-group">
+                <label for="agreementDate">Date of Agreement:</label>
+                <input type="date" id="agreementDate" name="agreementDate" required>
+            </div>
+
+            <h2>Contract Terms</h2>
+            <div class="form-group">
+                <label for="cropName">Name of Crop:</label>
+                <input type="text" id="cropName" name="cropName" required>
+            </div>
+            <div class="form-group">
+                <label for="cropQuantity">Quantity/Weight:</label>
+                <input type="text" id="cropQuantity" name="cropQuantity" required>
+            </div>
+            <div class="form-group">
+                <label for="harvestDate">Harvest Period or Date:</label>
+                <input type="date" id="harvestDate" name="harvestDate" required>
+            </div>
+            <div class="form-group">
+                <label for="qualityStandards">Quality Standards:</label>
+                <textarea id="qualityStandards" name="qualityStandards" rows="3" required placeholder="Specify grade, size, moisture content, etc."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputSupport">Input Support (Seeds, Fertilizers, etc.):</label>
+                <textarea id="inputSupport" name="inputSupport" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="agreedPrice">Agreed Price (₹ per unit):</label>
+                <input type="number" id="agreedPrice" name="agreedPrice" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentTerms">Payment Terms:</label>
+                <textarea id="paymentTerms" name="paymentTerms" rows="2" required placeholder="e.g., on delivery, within X days after delivery"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="deliveryLocation">Delivery Location:</label>
+                <textarea id="deliveryLocation" name="deliveryLocation" rows="2" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="deliveryDeadline">Delivery Deadline:</label>
+                <input type="date" id="deliveryDeadline" name="deliveryDeadline" required>
+            </div>
+            <div class="form-group">
+                <label for="forceMajeure">Force Majeure Conditions:</label>
+                <textarea id="forceMajeure" name="forceMajeure" rows="2" required placeholder="e.g., natural disasters, disease outbreaks"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="terminationConditions">Termination Conditions:</label>
+                <textarea id="terminationConditions" name="terminationConditions" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="disputeResolution">Dispute Resolution:</label>
+                <textarea id="disputeResolution" name="disputeResolution" rows="2" required></textarea>
+            </div>
+
+            <h2>Signatures</h2>
+            <div class="form-group">
+                <label for="farmerSignature">Farmer's Signature (Upload Image):</label>
+                <input type="file" id="farmerSignature" name="farmerSignature" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="buyerSignature">Buyer's Signature (Upload Image):</label>
+                <input type="file" id="buyerSignature" name="buyerSignature" accept="image/*" required>
+            </div>
+
+            <button type="submit">Generate Contract</button>
+        </form>
+
+        <div id="contract-preview">
+            <h2>Contract Preview</h2>
+            <pre id="contract-text"></pre>
+            <button onclick="downloadPDF()">Download as PDF</button>
+        </div>
+    </div>
+
+    <!-- Include jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function generateContract() {
+            const farmerName = document.getElementById('farmerName').value;
+            const farmerAddress = document.getElementById('farmerAddress').value;
+            const farmerContact = document.getElementById('farmerContact').value;
+            const buyerName = document.getElementById('buyerName').value;
+            const buyerAddress = document.getElementById('buyerAddress').value;
+            const buyerContact = document.getElementById('buyerContact').value;
+            const agreementDate = document.getElementById('agreementDate').value;
+            const cropName = document.getElementById('cropName').value;
+            const cropQuantity = document.getElementById('cropQuantity').value;
+            const harvestDate = document.getElementById('harvestDate').value;
+            const qualityStandards = document.getElementById('qualityStandards').value;
+            const inputSupport = document.getElementById('inputSupport').value;
+            const agreedPrice = document.getElementById('agreedPrice').value;
+            const paymentTerms = document.getElementById('paymentTerms').value;
+            const deliveryLocation = document.getElementById('deliveryLocation').value;
+            const deliveryDeadline = document.getElementById('deliveryDeadline').value;
+            const forceMajeure = document.getElementById('forceMajeure').value;
+            const terminationConditions = document.getElementById('terminationConditions').value;
+            const disputeResolution = document.getElementById('disputeResolution').value;
+
+            let contractText = `
+                Contract Farming Agreement
+
+                Agreement Date: ${agreementDate}
+
+                Farmer Information:
+                Name: ${farmerName}
+                Address: ${farmerAddress}
+                Contact: ${farmerContact}
+
+                Buyer Information:
+                Name: ${buyerName}
+                Address: ${buyerAddress}
+                Contact: ${buyerContact}
+
+                Crop Information:
+                Crop: ${cropName}
+                Quantity/Weight: ${cropQuantity}
+                Harvest Date: ${harvestDate}
+
+                Quality Standards:
+                ${qualityStandards}
+
+                Input Support:
+                ${inputSupport}
+
+                Price and Payment Terms:
+                Price per Unit: ₹${agreedPrice}
+                Payment Terms: ${paymentTerms}
+
+                Delivery Information:
+                Location: ${deliveryLocation}
+                Deadline: ${deliveryDeadline}
+
+                Force Majeure Conditions:
+                ${forceMajeure}
+
+                Termination Conditions:
+                ${terminationConditions}
+
+                Dispute Resolution:
+                ${disputeResolution}
+            `;
+
+            // Display the contract text
+            document.getElementById('contract-text').innerText = contractText;
+
+            // Show contract preview
+            document.getElementById('contract-preview').style.display = 'block';
+        }
+
+        // PDF download function
+        function downloadPDF() {
+            const contractText = document.getElementById('contract-text').innerText;
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text(contractText, 10, 10);
+            doc.save('contract.pdf');
+        }
+    </script>
+
+</body>
+</html>
